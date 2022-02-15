@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+string a,b;
+int dem;
+int main()
+{
+    freopen("B4.inp","r",stdin);
+    freopen("B4.out","w",stdout);
+    cin>>a>>b;
+    if(a.length()<b.length()) swap(a,b);
+    for(int i=1;i<=b.length();i++)
+    {   string x="",y="";
+        string s=b.substr(0,i);
+        while(x.length()<b.length())
+        {
+            x.append(s);
+        }
+        if(x==b)
+        {
+            while(y.length()<a.length())
+            {
+                y.append(s);
+            }
+            if(y==a) dem++;
+        }
+
+    }
+    cout<<dem;
+
+    return 0;
+}

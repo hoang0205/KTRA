@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+int a,b,x[1000],y[1000];
+int main()
+{
+    freopen("B2.inp","r",stdin);
+    freopen("B2.out","w",stdout);
+    cin>>a>>b;
+    if(a%b==0) cout<<a/b; else
+    {
+        if((a<0&&b>0)||(a>0&&b<0)) cout<<"-";
+        a=abs(a);b=abs(b);
+        cout<<a/b<<".";
+        a=a%b; x[0]=a;
+        int k=1,j=0;
+      do
+      {
+        a=a*10;
+        y[k]=a/b; a=a%b;
+        j=0;
+        while(j<k&&a!=x[j]) j++;
+        if (j==k) x[k]=a;
+        k++;
+      }
+      while (a>0&&j==k-1);
+
+      for(int i=1;i<=j;i++) cout<<y[i];
+    if (j<k-1)
+    {
+        cout<<"(";
+        for(int i=j+1;i<=k-1;i++) cout<<y[i];
+        cout <<")";
+    }
+    //cout<<endl;
+ //   cout<<j<<" "<<k<<endl;
+  //for(int i=1;i<=j;i++) cout<<y[i]<<" ";cout<<endl;
+  //for(int i=j+1;i<k;i++) cout<<y[i]<<" "; cout<<endl;
+  //for(int i=0;i<k;i++) cout<<x[i]<<" ";
+
+    }
+    return 0;
+}
+
+

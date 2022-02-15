@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+int k;
+int main()
+{
+    freopen("B1.inp","r",stdin);
+    freopen("B1.out","w",stdout);
+    cin>>k;int d=0;
+    while(k>0)
+    {
+        k=k/5;
+        d=d+k;
+    }
+    cout<<d;
+    return 0;
+}
